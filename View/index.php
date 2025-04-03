@@ -84,15 +84,38 @@ if (!$_SESSION['loggedIn']) {
         })
     </script>
 
-
+<!--Setting Background Music-->
+    <audio autoplay loop id="backgroundMusic">
+        <source src="../Assets/Audio/background_music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 <audio autoplay loop id="menuMusic">
     <source src="../Assets/Audio/menu_music.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
 </audio>
 
+<!--created mute button-->
+<button id="toggleMusic" class="musicBtn"><i class="bi bi-volume-mute"></i></button>
+
+<script>
+    $(document).ready(function () {
+        $('#toggleMusic').click(function () {
+            var audio = document.getElementById("menuMusic");
+            if (audio.paused) {
+                audio.play();
+                $(this).html("<i class='bi bi-volume-mute'></i>");
+            } else {
+                audio.pause();
+                $(this).html("<i class='bi bi-music-note'></i>");
+            }
+        });
+    });
+</script>
+
+<!--setting volume to 10%-->
     <script>
         var audio = document.getElementById("menuMusic");
-        audio.volume = 0.1; // Set volume to 10%
+        audio.volume = 0.1; 
     </script>
 
 </body>
