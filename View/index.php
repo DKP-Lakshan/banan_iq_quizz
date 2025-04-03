@@ -84,6 +84,17 @@ if (!$_SESSION['loggedIn']) {
         })
     </script>
 
+
+<audio autoplay loop id="menuMusic">
+    <source src="../Assets/Audio/menu_music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+    <script>
+        var audio = document.getElementById("menuMusic");
+        audio.volume = 0.1; // Set volume to 10%
+    </script>
+
 </body>
 
 </html>
